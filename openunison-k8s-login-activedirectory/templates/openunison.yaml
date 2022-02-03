@@ -353,6 +353,8 @@ spec:
       value: {{ .Values.enable_impersonation | quote }}
     - name: PROMETHEUS_SERVICE_ACCOUNT
       value: {{ .Values.monitoring.prometheus_service_account}}
+    - name: SHOW_PORTAL_ORGS
+      value: {{ .Values.show_portal_orgs | quote }}
     {{ if eq .Values.network.ingress_type "istio" }}
     {{ if and (eq .Values.enable_impersonation true) (eq .Values.impersonation.use_jetstack true ) }}
     - name: K8S_API_SERVER_CERT
